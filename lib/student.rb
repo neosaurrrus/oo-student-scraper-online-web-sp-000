@@ -25,7 +25,7 @@ class Student
 
     attributes_hash.each do |key, value|
 
-        instance_variable_set(@key, value)
+        self.send(("#{key}="), value)
     end
 
   binding.pry
