@@ -52,7 +52,7 @@ class Scraper
         profile_hash[:blog] = social
       end
     }
-      profile_hash[:profile_quote] = scraped_quote,
+      profile_hash[:profile_quote] = scraped_quote
       profile_hash[:bio] = scraped_bio
     profile_hash
   end
