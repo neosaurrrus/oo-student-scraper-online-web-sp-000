@@ -38,25 +38,23 @@ class Scraper
     scraped_quote = scraped_profile.css(".profile-quote").children.text
     scraped_bio = scraped_profile.css(".description-holder > p").text
 
-    profile_hash = {
-      twitter: scraped_socials[0],
-      linkedin: scraped_socials[1],
-      github: scraped_socials[2],
-      blog: scraped_socials[3],
-      profile_quote: scraped_quote,
-      bio: scraped_bio
+
+    profile_hash = {}
+
+    scraped_socials.each { |social|
+      if  social.include?("twitter")
+        profile_hash[:twitter] = social
+      elsif social.include?("linkedin")
+        profile_hash[:linkedin] = social
+      elsif social.include?("github")
+        profile_hash[:github] = social
+      elsif social.include?("http")
+        profile_hash[:blog] = social
+      end
     }
-    puts profile_hash
-    #binding.pry
+      profile_hash[:profile_quote] = scraped_quote,
+      profile_hash[:bio] = scraped_bio
+    profile_hash
   end
-
-  #
-  # let!(:student_joe_hash) {{:twitter=>"https://twitter.com/jmburges",
-  #                           :linkedin=>"https://www.linkedin.com/in/jmburges",
-  #                           :github=>"https://github.com/jmburges",
-  #                           :blog=>"http://joemburgess.com/",
-  #                           :profile_quote=>"\"Reduce to a previously solved problem\"",
-  #                           :bio=>
-
 
 end
