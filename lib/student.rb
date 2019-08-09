@@ -27,7 +27,7 @@ class Student
         self.send(("#{key}="), value)
     end
 
-  binding.pry
+
 
   end
 
