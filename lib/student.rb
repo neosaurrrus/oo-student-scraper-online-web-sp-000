@@ -25,7 +25,7 @@ class Student
 
     attributes_hash.each do |key, value|
       binding.pry
-        instance_variable_get(@key)
+        instance_variable_get(@:key)
 
     end
 
