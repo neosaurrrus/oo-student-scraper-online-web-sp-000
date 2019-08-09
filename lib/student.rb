@@ -24,12 +24,12 @@ class Student
   def add_student_attributes(attributes_hash)
 
     attributes_hash.each do |key, value|
-
-        instance_variable_set(@:key, value)
+      binding.pry
+        instance_variable_get(@key)
 
     end
 
-  hash
+  binding.pry
 
   end
 
